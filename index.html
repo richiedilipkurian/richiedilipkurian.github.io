@@ -41,7 +41,8 @@
       background: var(--sidebar); color: #e8eef0;
       padding: 48px 36px; display: flex; flex-direction: column; overflow-y: auto;
     }
-    .content { margin-left: 320px; padding: 0 64px; max-width: 1060px; }
+    .content { margin-left: 320px; padding: 0 64px; }
+    .content > section { max-width: 880px; margin-left: auto; margin-right: auto; }
 
     .photo {
       width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
@@ -79,9 +80,8 @@
     /* Intro */
     .intro { padding-top: 96px; }
     .lead { font-family: "Newsreader", Georgia, serif; font-size: 26px; line-height: 1.45; margin: 0 0 24px; }
-    .intro p { max-width: 720px; }
     .news {
-      display: flex; gap: 14px; align-items: flex-start; margin-top: 30px; max-width: 720px;
+      display: flex; gap: 14px; align-items: flex-start; margin-top: 30px;
       background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent);
       border-radius: 8px; padding: 16px 20px; font-size: 15.5px;
     }
