@@ -107,16 +107,11 @@
     .authors { color: var(--muted); font-size: 15px; margin: 0 0 10px; }
     .keywords { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
     .keywords span { font-size: 12.5px; background: var(--accent-soft); color: var(--accent); padding: 2px 10px; border-radius: 20px; }
-    details summary { cursor: pointer; font-size: 14.5px; font-weight: 500; color: var(--accent); list-style: none; }
-    details summary::before { content: "+ "; }
-    details[open] summary::before { content: "− "; }
-    details p { margin: 10px 0 0; font-size: 15.5px; max-width: 760px; }
     .links a { font-size: 14px; margin-right: 14px; font-weight: 500; }
 
     /* Teaching */
     .modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0 40px; }
     .module { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
-    .code { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; }
     .module h3 { font-size: 19px; margin: 6px 0 6px; }
     .module p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
     .past { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
@@ -225,7 +220,7 @@
       <div class="themes">
         <div class="theme">
           <i class="fa-solid fa-scale-balanced"></i>
-          <h3>Tax compliance and liquidity shocks</h3>
+          <h3>Tax compliance and demonetisation</h3>
           <p>How people adjust reporting and financial behaviour when cash use is suddenly restricted.</p>
         </div>
         <div class="theme">
@@ -241,7 +236,7 @@
         <div class="theme">
           <i class="fa-solid fa-chart-line"></i>
           <h3>Policy evaluation</h3>
-          <p>Causal evaluation where randomisation is not possible, from Brexit to local government.</p>
+          <p>Evaluating large policy and institutional changes, from Brexit to local government.</p>
         </div>
       </div>
 
@@ -254,17 +249,6 @@
         <h3>Liquidity under Constraint: Experimental Evidence on Behavioural Adaptation to Sudden Monetary Shocks</h3>
         <p class="authors">Richie Dilip Kurian · 2026</p>
         <div class="keywords"><span>Tax compliance</span><span>Demonetisation</span><span>Loss aversion</span><span>Lab experiment</span></div>
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Motivated by India's 2016 demonetisation, this paper designs a multi-round laboratory tax-compliance
-            experiment with a built-in liquidity shock, comparing a no-shock control with pre-announced and sudden
-            shocks. Both shocks raise deposits and reduce cash spending while restrictions are in force. Cash spending
-            returns towards its earlier level once restrictions end, but deposit behaviour persists, particularly after
-            a sudden shock and among participants with prior audit experience. The design separates genuine compliance
-            gains from a mechanical shift of spending into formal channels.
-          </p>
-        </details>
         <!-- EDIT: when the PDF is ready, upload it and remove the arrows
         <div class="links"><a href="liquidity-under-constraint.pdf"><i class="fa-regular fa-file-pdf"></i> PDF</a></div>
         -->
@@ -274,52 +258,26 @@
         <h3>Cooperation under Escalating Risk: Evidence from a Dynamic Public Goods Experiment</h3>
         <p class="authors">with Friederike Mengel and Dennie van Dolder · 2026</p>
         <div class="keywords"><span>Public goods</span><span>Collective risk</span><span>Growth bias</span><span>Lab experiment</span></div>
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            We introduce a framework for studying cooperation when the probability of collective failure rises with
-            group behaviour, varying initial risk, contribution effectiveness, risk growth and group size. Smaller
-            groups adapt more effectively to escalating risk, while larger groups are more sensitive to the pace of
-            risk growth and to incentive design. Individual differences in exponential-growth bias and probability
-            bias explain much of the variation in contribution timing.
-          </p>
-        </details>
       </div>
 
       <div class="paper">
-        <h3>The Effect of Brexit on the UK and EU: A Synthetic Control Analysis</h3>
+        <h3>The Effect of Brexit on the UK: A Synthetic Control Analysis</h3>
         <p class="authors">with Neslihan Sakarya · 2026</p>
         <div class="keywords"><span>Synthetic control</span><span>Brexit</span><span>Conformal inference</span></div>
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Using quarterly real GDP from 1960 to 2024, we build synthetic control counterfactuals for the UK and major
-            EU economies, separating Brexit from shocks such as COVID-19. Effects on the UK are concentrated around
-            implementation rather than the referendum, with a modest net cumulative effect by 2024, while spillovers
-            to Germany and France are broadly muted.
-          </p>
-        </details>
       </div>
+
+      <h3 class="sub-head" style="margin-top:40px">Work in progress</h3>
 
       <div class="paper">
         <h3>Behavioural Barriers to Digital and Financial Formalisation among Informal Microentrepreneurs in India</h3>
-        <p class="authors">with Pavanam Thomas · 2026</p>
-        <div class="keywords"><span>Financial inclusion</span><span>Informality</span><span>Nudges</span><span>SEM</span></div>
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Why does digital-payment adoption stay low among informal microenterprises despite India's digital public
-            infrastructure? Combining surveys, incentivised behavioural tasks and randomised nudges, the study tests how
-            risk and loss aversion, present bias, complexity aversion, institutional mistrust, hassle costs and social
-            norms shape formalisation decisions.
-          </p>
-        </details>
+        <p class="authors">with Pavanam Thomas</p>
+        <div class="keywords"><span>Financial inclusion</span><span>Informality</span><span>Nudges</span><span>Field study</span></div>
       </div>
 
       <div class="paper">
-        <span class="tag light">Work in progress</span>
         <h3>Trust-Based Management and the Financial Resilience of Local Government in Sweden</h3>
-        <p class="authors">Structural equation modelling</p>
+        <p class="authors">with Andr&eacute; Lino and Ileana Steccolini</p>
+        <div class="keywords"><span>Public sector management</span><span>Financial resilience</span><span>Structural equation modelling</span></div>
       </div>
     </section>
 
@@ -335,30 +293,28 @@
       <h3 class="sub-head" style="margin-top:36px">Currently teaching at Essex</h3>
       <div class="modules">
         <div class="module">
-          <div class="code">EC261</div>
           <h3>Management of New Technology</h3>
-          <p>Undergraduate</p>
+          <p>Undergraduate · Lecturer</p>
         </div>
         <div class="module">
-          <div class="code">EC501</div>
           <h3>Econometrics</h3>
-          <p>&nbsp;</p>
+          <p>Postgraduate · Lecturer</p>
         </div>
         <div class="module">
-          <div class="code">IA212</div>
           <h3>Global Politics and Economic Policies</h3>
-          <p>Including preparation of teaching materials</p>
+          <p>Undergraduate · Lecturer, including preparation of teaching materials</p>
         </div>
       </div>
+      <p style="margin:-16px 0 40px">I currently supervise nine undergraduate dissertations and am personal tutor to 15 students.</p>
 
       <div class="past">
         <div>
           <h3>University of Essex</h3>
-          <p class="when">Assistant Lecturer · 2024–2025</p>
+          <p class="when">Assistant Lecturer · 2024–2025 · UG</p>
           <ul>
-            <li>Mathematical Economics</li>
-            <li>Behavioural Economics</li>
-            <li>Marking and assessment</li>
+            <li>Teaching assistant: Mathematical Economics</li>
+            <li>Teaching assistant: Behavioural Economics</li>
+            <li>Marking and feedback</li>
           </ul>
         </div>
         <div>
@@ -369,7 +325,8 @@
             <li>Microeconomics · Macroeconomics · Econometrics</li>
             <li>Operations Research · Agricultural Economics</li>
             <li>Economics of Health and Education</li>
-            <li>Curriculum design; supervised UG and PG dissertations</li>
+            <li>Led curriculum and syllabus design</li>
+            <li>Supervised one UG and one PG dissertation</li>
           </ul>
         </div>
       </div>
@@ -390,7 +347,7 @@
           <div class="t-item"><h3>Project Manager</h3><p>Highrange Builders and Developers · 2011–2015</p></div>
         </div>
         <div class="timeline">
-          <div class="t-item current"><h3>PhD Economics</h3><p>University of Essex · in progress</p></div>
+          <div class="t-item current"><h3>PhD Economics</h3><p>University of Essex · expected April 2027</p></div>
           <div class="t-item"><h3>MRes Economics</h3><p>University of Essex · 2023</p></div>
           <div class="t-item"><h3>MSc Economics</h3><p>IGNOU · 2018</p></div>
           <div class="t-item"><h3>MA Public Administration</h3><p>IGNOU · 2014</p></div>
