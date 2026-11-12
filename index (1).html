@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: browser tab title and Google description -->
+  <title>Richie Dilip Kurian | Lecturer in Economics, University of Essex</title>
+  <meta name="description" content="Richie Dilip Kurian, Lecturer in Economics at the University of Essex. Behavioural and experimental economics, tax compliance, financial formalisation and public policy evaluation.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* =================================================================
+       COLOURS: change these to restyle the whole website
+       ================================================================= */
+    :root {
+      --ink: #1c2430;          /* main text */
+      --muted: #5d6673;        /* secondary text */
+      --paper: #fbfaf7;        /* page background (warm off-white) */
+      --card: #ffffff;         /* boxes */
+      --accent: #0f5c63;       /* deep teal: links, highlights */
+      --accent-soft: #e4efef;  /* light teal for tags */
+      --line: #e7e3da;         /* thin lines */
+      --sidebar: #12333a;      /* left panel background */
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: "Inter", Arial, sans-serif; font-size: 16.5px; line-height: 1.7;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 { font-family: "Newsreader", Georgia, serif; font-weight: 500; line-height: 1.25; }
+
+    /* =================== LAYOUT: fixed left panel + content =================== */
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 320px;
+      background: var(--sidebar); color: #e8eef0;
+      padding: 48px 36px; display: flex; flex-direction: column; overflow-y: auto;
+    }
+    .content { margin-left: 320px; padding: 0 64px; }
+    .content > section { max-width: 880px; margin-left: auto; margin-right: auto; }
+
+    .photo {
+      width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.25);
+    }
+    .sidebar h1 { color: #fff; font-size: 30px; margin: 22px 0 6px; }
+    .sidebar .title { margin: 0; font-size: 15px; color: #c9d7da; line-height: 1.5; }
+    .sidebar .title strong { color: #fff; font-weight: 500; }
+
+    .side-nav { margin: 36px 0; display: flex; flex-direction: column; gap: 4px; }
+    .side-nav a {
+      color: #c9d7da; font-size: 15px; padding: 6px 0 6px 14px;
+      border-left: 2px solid transparent; transition: 0.2s;
+    }
+    .side-nav a:hover, .side-nav a.active { color: #fff; border-left-color: #7fc6c9; text-decoration: none; }
+
+    .side-links { margin-top: auto; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; }
+    .side-links a { color: #e8eef0; }
+    .side-links i { width: 22px; color: #7fc6c9; }
+    .cv-btn {
+      display: inline-block; margin-top: 8px; text-align: center; padding: 10px;
+      border: 1px solid #7fc6c9; border-radius: 6px; color: #fff !important; font-weight: 500;
+    }
+    .cv-btn:hover { background: #7fc6c9; color: var(--sidebar) !important; text-decoration: none; }
+
+    /* =================== SECTIONS =================== */
+    section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    section:last-of-type { border-bottom: none; }
+    .eyebrow {
+      font-size: 12.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin: 0 0 8px;
+    }
+    h2 { font-size: 36px; margin: 0 0 28px; }
+
+    /* Intro */
+    .intro { padding-top: 96px; }
+    .lead { font-family: "Newsreader", Georgia, serif; font-size: 26px; line-height: 1.45; margin: 0 0 24px; }
+    .news {
+      display: flex; gap: 14px; align-items: flex-start; margin-top: 30px;
+      background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+      border-radius: 8px; padding: 16px 20px; font-size: 15.5px;
+    }
+    .news i { color: var(--accent); margin-top: 5px; }
+
+    /* Research themes */
+    .themes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 52px; }
+    .theme { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 22px 24px; }
+    .theme i { color: var(--accent); font-size: 20px; }
+    .theme h3 { font-size: 21px; margin: 10px 0 6px; }
+    .theme p { margin: 0; font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+    /* Papers */
+    .sub-head { font-size: 24px; margin: 0 0 6px; }
+    .paper { padding: 26px 0; border-top: 1px solid var(--line); }
+    .paper:first-of-type { border-top: none; }
+    .tag {
+      display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; background: var(--accent); color: #fff; margin-bottom: 8px;
+    }
+    .tag.light { background: var(--accent-soft); color: var(--accent); }
+    .paper h3 { font-size: 22px; margin: 0 0 6px; }
+    .authors { color: var(--muted); font-size: 15px; margin: 0 0 10px; }
+    .keywords { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+    .keywords span { font-size: 12.5px; background: var(--accent-soft); color: var(--accent); padding: 2px 10px; border-radius: 20px; }
+    .links a { font-size: 14px; margin-right: 14px; font-weight: 500; }
+
+    /* Teaching */
+    .modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0 40px; }
+    .module { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+    .module h3 { font-size: 19px; margin: 6px 0 6px; }
+    .module p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
+    .past { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .past h3 { font-size: 20px; margin: 0 0 2px; }
+    .past .when { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+    .past ul { margin: 0; padding-left: 18px; font-size: 15.5px; }
+    .philosophy {
+      font-family: "Newsreader", Georgia, serif; font-size: 21px; line-height: 1.55; font-style: italic;
+      border-left: 3px solid var(--accent); padding-left: 22px; margin: 0 0 8px; max-width: 760px; color: #34404d;
+    }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+    .t-item { position: relative; margin-bottom: 22px; }
+    .t-item::before {
+      content: ""; position: absolute; left: -27px; top: 8px; width: 12px; height: 12px; border-radius: 50%;
+      background: var(--paper); border: 2px solid var(--accent);
+    }
+    .t-item.current::before { background: var(--accent); }
+    .t-item h3 { font-size: 19px; margin: 0; }
+    .t-item p { margin: 0; color: var(--muted); font-size: 15px; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .contact-card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; font-size: 15px; }
+    .contact-card i { color: var(--accent); font-size: 20px; margin-bottom: 8px; display: block; }
+
+    footer { padding: 30px 0 40px; color: var(--muted); font-size: 13.5px; }
+
+    /* =================== PHONES AND TABLETS =================== */
+    @media (max-width: 960px) {
+      .sidebar { position: static; width: auto; padding: 36px 22px; align-items: center; text-align: center; }
+      .side-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; margin: 22px 0; gap: 4px 16px; }
+      .side-nav a { border-left: none; padding: 2px 0; }
+      .side-links { align-items: center; margin-top: 0; }
+      .content { margin-left: 0; padding: 0 20px; }
+      .intro { padding-top: 56px; }
+      .themes, .modules, .past, .cols, .contact-grid { grid-template-columns: 1fr; }
+      h2 { font-size: 30px; }
+      .lead { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =================== LEFT PANEL =================== -->
+  <aside class="sidebar">
+    <!-- EDIT: upload a photo named photo.jpg to GitHub -->
+    <img class="photo" src="photo.jpg" alt="Richie Dilip Kurian">
+    <h1>Richie Dilip Kurian</h1>
+    <p class="title"><strong>Lecturer in Economics</strong><br>University of Essex<br>PhD Candidate in Economics</p>
+
+    <nav class="side-nav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="side-links">
+      <a href="mailto:richiedilipkurian@gmail.com"><i class="fa-solid fa-envelope"></i>richiedilipkurian@gmail.com</a>
+      <a href="https://www.linkedin.com/in/richiekurian-18453956"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+      <!-- EDIT: add Google Scholar when you have it (remove the arrows around the line)
+      <a href="https://scholar.google.com/citations?user=YOURID"><i class="fa-solid fa-graduation-cap"></i>Google Scholar</a>
+      -->
+      <a class="cv-btn" href="cv.pdf"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <!-- =================== ABOUT =================== -->
+    <section id="about" class="intro">
+      <p class="eyebrow">About</p>
+      <p class="lead">
+        I study how people, organisations and economies respond to public policy, enforcement, risk and
+        economic shocks, using laboratory experiments and applied econometrics.
+      </p>
+      <p>
+        I am a Lecturer in Economics at the University of Essex, where I am also completing my PhD in Economics.
+        My research sits at the intersection of behavioural and experimental economics and public policy
+        evaluation, with applications to tax compliance, financial formalisation, collective action and local
+        governance.
+      </p>
+      <p>
+        My route into economics ran through civil engineering, commercial banking at the State Bank of India and
+        public administration. Before Essex, I was an Assistant Professor at St Berchmans College, where I taught
+        across mathematical, behavioural, micro- and macroeconomics and econometrics, and led curriculum development.
+      </p>
+
+      <!-- EDIT: change this news box whenever you have something new -->
+      <div class="news">
+        <i class="fa-solid fa-bullhorn"></i>
+        <div><strong>September 2026:</strong> Joined the Department of Economics at the University of Essex as Lecturer in Economics.</div>
+      </div>
+    </section>
+
+    <!-- =================== RESEARCH =================== -->
+    <section id="research">
+      <p class="eyebrow">Research</p>
+      <h2>What I work on</h2>
+
+      <div class="themes">
+        <div class="theme">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <h3>Tax compliance and demonetisation</h3>
+          <p>How people adjust reporting and financial behaviour when cash use is suddenly restricted.</p>
+        </div>
+        <div class="theme">
+          <i class="fa-solid fa-people-group"></i>
+          <h3>Cooperation under collective risk</h3>
+          <p>When groups manage to cooperate as the risk of shared loss keeps rising.</p>
+        </div>
+        <div class="theme">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <h3>Financial and digital formalisation</h3>
+          <p>Behavioural barriers that keep informal microentrepreneurs out of the formal financial system.</p>
+        </div>
+        <div class="theme">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Policy evaluation</h3>
+          <p>Evaluating large policy and institutional changes, from Brexit to local government.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-head">Working papers</h3>
+
+      <!-- TO ADD A PAPER: copy one whole <div class="paper"> ... </div> block, paste it, change the text -->
+
+      <div class="paper">
+        <span class="tag">Job market paper</span>
+        <h3>Liquidity under Constraint: Experimental Evidence on Behavioural Adaptation to Sudden Monetary Shocks</h3>
+        <p class="authors">Richie Dilip Kurian · 2026</p>
+        <div class="keywords"><span>Tax compliance</span><span>Demonetisation</span><span>Loss aversion</span><span>Lab experiment</span></div>
+        <!-- EDIT: when the PDF is ready, upload it and remove the arrows
+        <div class="links"><a href="liquidity-under-constraint.pdf"><i class="fa-regular fa-file-pdf"></i> PDF</a></div>
+        -->
+      </div>
+
+      <div class="paper">
+        <h3>Cooperation under Escalating Risk: Evidence from a Dynamic Public Goods Experiment</h3>
+        <p class="authors">with Friederike Mengel and Dennie van Dolder · 2026</p>
+        <div class="keywords"><span>Public goods</span><span>Collective risk</span><span>Growth bias</span><span>Lab experiment</span></div>
+      </div>
+
+      <div class="paper">
+        <h3>The Effect of Brexit on the UK: A Synthetic Control Analysis</h3>
+        <p class="authors">with Neslihan Sakarya · 2026</p>
+        <div class="keywords"><span>Synthetic control</span><span>Brexit</span><span>Conformal inference</span></div>
+      </div>
+
+      <h3 class="sub-head" style="margin-top:40px">Work in progress</h3>
+
+      <div class="paper">
+        <h3>Behavioural Barriers to Digital and Financial Formalisation among Informal Microentrepreneurs in India</h3>
+        <p class="authors">with Pavanam Thomas</p>
+        <div class="keywords"><span>Financial inclusion</span><span>Informality</span><span>Nudges</span><span>Field study</span></div>
+      </div>
+
+      <div class="paper">
+        <h3>Trust-Based Management and the Financial Resilience of Local Government in Sweden</h3>
+        <p class="authors">with Andr&eacute; Lino and Ileana Steccolini</p>
+        <div class="keywords"><span>Public sector management</span><span>Financial resilience</span><span>Structural equation modelling</span></div>
+      </div>
+    </section>
+
+    <!-- =================== TEACHING =================== -->
+    <section id="teaching">
+      <p class="eyebrow">Teaching</p>
+      <h2>Teaching</h2>
+      <p class="philosophy">
+        I teach economics as a way of reasoning about real behaviour: students first face a decision, then learn
+        how economics explains it.
+      </p>
+
+      <h3 class="sub-head" style="margin-top:36px">Currently teaching at Essex</h3>
+      <div class="modules">
+        <div class="module">
+          <h3>Management of New Technology</h3>
+          <p>Undergraduate · Lecturer</p>
+        </div>
+        <div class="module">
+          <h3>Econometrics</h3>
+          <p>Postgraduate · Lecturer</p>
+        </div>
+        <div class="module">
+          <h3>Global Politics and Economic Policies</h3>
+          <p>Undergraduate · Lecturer, including preparation of teaching materials</p>
+        </div>
+      </div>
+      <p style="margin:-16px 0 40px">I currently supervise nine undergraduate dissertations and am personal tutor to 15 students.</p>
+
+      <div class="past">
+        <div>
+          <h3>University of Essex</h3>
+          <p class="when">Assistant Lecturer · 2024–2025 · UG</p>
+          <ul>
+            <li>Teaching assistant: Mathematical Economics</li>
+            <li>Teaching assistant: Behavioural Economics</li>
+            <li>Marking and feedback</li>
+          </ul>
+        </div>
+        <div>
+          <h3>St Berchmans College</h3>
+          <p class="when">Assistant Professor · 2020–2022 · UG and PG</p>
+          <ul>
+            <li>Mathematical Economics · Behavioural Economics</li>
+            <li>Microeconomics · Macroeconomics · Econometrics</li>
+            <li>Operations Research · Agricultural Economics</li>
+            <li>Economics of Health and Education</li>
+            <li>Led curriculum and syllabus design</li>
+            <li>Supervised one UG and one PG dissertation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== EXPERIENCE & EDUCATION =================== -->
+    <section id="experience">
+      <p class="eyebrow">Background</p>
+      <h2>Experience and education</h2>
+      <div class="cols">
+        <div class="timeline">
+          <div class="t-item current"><h3>Lecturer in Economics</h3><p>University of Essex · 2026–present</p></div>
+          <div class="t-item"><h3>Senior Research Officer</h3><p>Dept. of Government, Essex · 2026</p></div>
+          <div class="t-item"><h3>Assistant Lecturer</h3><p>Dept. of Economics, Essex · 2024–2025</p></div>
+          <div class="t-item"><h3>Research Officer</h3><p>Essex Business School · 2024 (6 months)</p></div>
+          <div class="t-item"><h3>Assistant Professor</h3><p>St Berchmans College · 2020–2022</p></div>
+          <div class="t-item"><h3>Assistant Manager</h3><p>State Bank of India · 2016–2019</p></div>
+          <div class="t-item"><h3>Project Manager</h3><p>Highrange Builders and Developers · 2011–2015</p></div>
+        </div>
+        <div class="timeline">
+          <div class="t-item current"><h3>PhD Economics</h3><p>University of Essex · expected April 2027</p></div>
+          <div class="t-item"><h3>MRes Economics</h3><p>University of Essex · 2023</p></div>
+          <div class="t-item"><h3>MSc Economics</h3><p>IGNOU · 2018</p></div>
+          <div class="t-item"><h3>MA Public Administration</h3><p>IGNOU · 2014</p></div>
+          <div class="t-item"><h3>BTech Civil Engineering</h3><p>Rajiv Gandhi Institute of Technology · 2010</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== CONTACT =================== -->
+    <section id="contact">
+      <p class="eyebrow">Contact</p>
+      <h2>Get in touch</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+          <!-- EDIT: consider your @essex.ac.uk address -->
+          <a href="mailto:richiedilipkurian@gmail.com">richiedilipkurian@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-location-dot"></i>
+          Department of Economics<br>University of Essex<br>Colchester CO4 3SQ
+        </div>
+        <div class="contact-card">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/richiekurian-18453956">LinkedIn profile</a>
+        </div>
+      </div>
+      <footer>© 2026 Richie Dilip Kurian · Last updated November 2026</footer>
+    </section>
+
+  </main>
+
+  <!-- Highlights the current section in the left menu as you scroll (no need to edit) -->
+  <script>
+    const links = document.querySelectorAll('.side-nav a');
+    const sections = [...links].map(a => document.querySelector(a.getAttribute('href')));
+    window.addEventListener('scroll', () => {
+      let current = 0;
+      sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 160) current = i; });
+      links.forEach((a, i) => a.classList.toggle('active', i === current));
+    });
+  </script>
+</body>
+</html>
